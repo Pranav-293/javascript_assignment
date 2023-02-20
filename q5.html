@@ -1,0 +1,21 @@
+<!-- JavaScript program to generate a random hexadecimal color code and display on screen-->
+
+<html>
+    <head>
+        <title>Random hexadecimal color code</title>
+        <body>
+            <h1>Random Color Generator</h1>
+            <h3 id="color-code">The color of background is #FFFFFF</h3>
+            <button onclick="generateColor()">Click to change the background color</button>
+
+            <script>
+                function generateColor(){
+                    var randomColor = Math.floor(Math.random() * 16777215);
+                    var color = "#" + randomColor.toString(16).padStart(6, '0');
+                    document.body.style.backgroundColor = color;
+                    document.getElementById('color-code').innerHTML = `The color of background is changed to ${color}`
+                }
+            </script>
+        </body>
+    </head>
+</html>

@@ -1,0 +1,25 @@
+<!-- javascript program to copy a string to clipboard -->
+
+<html>
+    <head>
+        <title>Copy Text to Clipboard</title>
+        <body>
+            <h1>Copy text to Clipboard</h1>
+            <input type="text", value="Paxcom", id="textToCopy">
+            <button onclick="copyFunction()">Click to Copy </button>
+
+            <script>
+                function copyFunction(){
+                    var textToCopy = document.getElementById("textToCopy");
+                    textToCopy.select();
+                    if(textToCopy.value===""){
+                        alert("text box is empty");
+                    }else{
+                        navigator.clipboard.writeText(textToCopy.value);
+                        alert(`Copied the text ${textToCopy.value}`);
+                    }
+                }
+            </script>
+        </body>
+    </head>
+</html>
